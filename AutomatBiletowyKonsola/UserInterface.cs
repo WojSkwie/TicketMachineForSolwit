@@ -60,9 +60,20 @@ namespace TicketMachineConsole
             return Console.ReadLine();
         }
 
+        public string AskForStartDate()
+        {
+            Console.WriteLine("Please enter starting date for ticket (format: DD/MM/YYYY)");
+            return Console.ReadLine();
+        }
+
         public string AskForDiscount()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Choose discount:");
+            foreach (Discounts discount in Enum.GetValues(typeof(Discounts)))
+            {
+                Console.WriteLine($"{(int)discount} - {Utils.GetDescription(discount)}");
+            }
+            return Console.ReadLine();
         }
         
 

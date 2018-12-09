@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ namespace TicketMachineConsole
 {
     public enum Commands
     {
+        [Description("Buy ticket")]
         buyTicket = 1,
+        [Description("Exit Program")]
         exit = 0
     }
 
@@ -40,7 +43,12 @@ namespace TicketMachineConsole
                     string typeToParse = UserInterface.AskForTicketType();
                     TicketTypes type = ParseType(typeToParse);
                     Ticket ticket = TicketFactory.CreateTicket(type);
-                    Logger.LogTicket(ticket);
+
+                    string discountToParse = UserInterface.AskForDiscount();
+                    Discounts desiredDiscount = ParseDiscount(discountToParse);
+                    var discountDecorator = new DiscountDecorator(ticket, desiredDiscount);
+
+                    Logger.LogTicket(discountDecorator);
                     break;
             }
         }
@@ -58,6 +66,31 @@ namespace TicketMachineConsole
             }
 
             TicketTypes desiredType = (TicketTypes)ticketNumber;
+            return desiredType;
+        }
+        public DateTime ParseDate(string input)
+        {
+            if (!DateTime.TryParse(input, out DateTime parsedDate)) 
+            {
+                parsedDate = new DateTime();
+            }
+            return parsedDate;
+
+        }
+
+        public Discounts ParseDiscount(string input)
+        {
+            if (!int.TryParse(input, out int discountNumber))
+            {
+                discountNumber = (int)Discounts.student;
+            }
+
+            if (!Enum.IsDefined(typeof(TicketTypes), discountNumber))
+            {
+                discountNumber = (int)Discounts.student;
+            }
+
+            Discounts desiredType = (Discounts)discountNumber;
             return desiredType;
         }
     }

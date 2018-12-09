@@ -19,6 +19,7 @@ namespace TicketMachineConsole
     public class TicketFactory
     {
         private static UserInterface UserInterface = new UserInterface();
+        private static Parser Parser = new Parser();
         public Ticket CreateTicket(TicketTypes type)
         {
             Ticket ticketToReturn;
@@ -32,7 +33,9 @@ namespace TicketMachineConsole
                     ticketToReturn = new HourTicket();
                     break;
                 case TicketTypes.monthly:
-                    ticketToReturn = new MonthlyTicket(new DateTime());
+                    string dateToParse = UserInterface.AskForStartDate();
+                    var parsedDate = Parser.ParseDate(dateToParse);
+                    ticketToReturn = new MonthlyTicket(parsedDate);
                     break;
                 default:
                     ticketToReturn = new HourTicket();

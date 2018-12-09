@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiscountDecorator.cs" />
+    <Compile Include="TicketDecorator.cs" />
     <Compile Include="HourTicket.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MonthlyTicket.cs" />

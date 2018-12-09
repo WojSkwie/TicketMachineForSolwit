@@ -9,7 +9,18 @@ namespace TicketMachineConsole
     public abstract class Ticket
     {
         public string Name { get; protected set; }
-        public double Price { get; protected set; }
+        protected double _Price;
+        public virtual double Price
+        {
+            get
+            {
+                return _Price;
+            }
+            protected set
+            {
+                _Price = value;
+            }
+        }
         private DateTime _BoughtAt;
         public string LoggingMessage { get; protected set; }
 
