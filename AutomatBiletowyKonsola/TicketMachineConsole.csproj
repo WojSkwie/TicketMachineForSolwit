@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HourTicket.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="MonthlyTicket.cs" />
+    <Compile Include="OneWayTicket.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

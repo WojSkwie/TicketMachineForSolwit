@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomatBiletowyKonsola
+namespace TicketMachineConsole
 {
     public class Parser
     {
+        private Logger Logger = Logger.Instance;
+
         public void ParseCommand(string command)
         {
-
+            Console.WriteLine("XD");
         }
     }
 }

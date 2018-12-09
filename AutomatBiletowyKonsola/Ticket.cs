@@ -4,11 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomatBiletowyKonsola
+namespace TicketMachineConsole
 {
-    public class Ticket
+    public abstract class Ticket
     {
-        public double Price { get; set; }
-        public DateTime BoughtAt { get; set; }
+        public string Name { get; protected set; }
+        public double Price { get; protected set; }
+        private DateTime _BoughtAt;
+        public string LoggingMessage { get; protected set; }
+
+        public DateTime BoughtAt
+        {
+            get { return _BoughtAt; }
+            private set { _BoughtAt = value; }
+        }
+
+        protected Ticket(double price)
+        {
+            BoughtAt = DateTime.Now;
+            Price = price;
+            LoggingMessage = $"Ticket {Name} Bought at {BoughtAt}.";
+        }
     }
 }
+
