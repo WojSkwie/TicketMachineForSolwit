@@ -12,7 +12,7 @@ namespace TicketMachineConsole
         public MonthlyTicket(DateTime startDate) : base(88.0)
         {
             StartDate = startDate;
-            LoggingMessage = string.Concat(base.LoggingMessage, $"Valid for a month starting from {StartDate}");
+            LoggingMessage = string.Concat(base.LoggingMessage, $"Valid for a month starting from {StartDate}. ");
         }
     }
 }

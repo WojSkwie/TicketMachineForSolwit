@@ -12,7 +12,7 @@ namespace TicketMachineConsole
         {
             var UserInterface = new UserInterface();
             UserInterface.PrintGreetings();
-            UserInterface.AskForAction();
+            UserInterface.MainLoop();
 
         }
     }

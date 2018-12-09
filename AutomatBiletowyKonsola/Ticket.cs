@@ -23,7 +23,7 @@ namespace TicketMachineConsole
         {
             BoughtAt = DateTime.Now;
             Price = price;
-            LoggingMessage = $"Ticket {Name} Bought at {BoughtAt}.";
+            LoggingMessage = $"Ticket {Name} Bought at {BoughtAt}. ";
         }
     }
 }

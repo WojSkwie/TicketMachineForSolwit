@@ -13,7 +13,7 @@ namespace TicketMachineConsole
         public OneWayTicket(string line) : base(3.0)
         {
             Line = line;
-            LoggingMessage = string.Concat(base.LoggingMessage, $"Line {Line}.");
+            LoggingMessage = string.Concat(base.LoggingMessage, $"Line {Line}. ");
         }
     }
 }

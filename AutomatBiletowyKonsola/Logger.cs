@@ -34,5 +34,10 @@ namespace TicketMachineConsole
                 streamWriter.WriteLine(text);
             }
         }
+
+        public void LogTicket(Ticket ticket)
+        {
+            AppendLog(ticket.LoggingMessage);
+        }
     }
 }
