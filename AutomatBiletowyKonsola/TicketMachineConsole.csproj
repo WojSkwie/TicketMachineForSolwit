@@ -47,16 +47,16 @@
   <ItemGroup>
     <Compile Include="Authentication.cs" />
     <Compile Include="DiscountDecorator.cs" />
-    <Compile Include="TicketDecorator.cs" />
-    <Compile Include="HourTicket.cs" />
+    <Compile Include="Tickets\TicketDecorator.cs" />
+    <Compile Include="Tickets\HourTicket.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="MonthlyTicket.cs" />
-    <Compile Include="OneWayTicket.cs" />
+    <Compile Include="Tickets\MonthlyTicket.cs" />
+    <Compile Include="Tickets\OneWayTicket.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs" />
-    <Compile Include="TicketFactory.cs" />
+    <Compile Include="Tickets\Ticket.cs" />
+    <Compile Include="Tickets\TicketFactory.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

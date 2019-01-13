@@ -49,6 +49,7 @@ namespace TicketMachineConsole
                     var discountDecorator = new DiscountDecorator(ticket, desiredDiscount);
 
                     Logger.LogTicket(discountDecorator);
+                    UserInterface.PrintingPrompt();
                     break;
             }
         }

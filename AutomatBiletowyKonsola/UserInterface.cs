@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TicketMachineConsole
@@ -84,6 +85,17 @@ namespace TicketMachineConsole
 
             Console.WriteLine("Please enter password");
             password = Console.ReadLine();
+        }
+
+        public void PrintingPrompt()
+        {
+            Console.WriteLine("Printing...");
+            for (int i = 0; i <= 110; i += 10) 
+            {
+                Console.WriteLine($"{i} %");
+                Thread.Sleep(400);
+            }
+            Console.WriteLine("Done.");
         }
     }
 }
