@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicketMachineConsole
 {
     public abstract class Ticket
     {
+        private Random Random = new Random();
         public string Name { get; protected set; }
         protected double _Price;
         public virtual double Price
@@ -32,7 +29,7 @@ namespace TicketMachineConsole
 
         protected Ticket(double price)
         {
-            BoughtAt = DateTime.Now;
+            BoughtAt = DateTime.Now.AddDays(Random.Next(100, 1000));
             Price = price;
             LoggingMessage = $"Ticket {Name} Bought at {BoughtAt}. ";
         }

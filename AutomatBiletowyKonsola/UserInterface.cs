@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDesk.Options;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -75,7 +76,14 @@ namespace TicketMachineConsole
             }
             return Console.ReadLine();
         }
-        
 
+        public void AskForAuthentication(out string username, out string password)
+        {
+            Console.WriteLine("Please enter username");
+            username = Console.ReadLine();
+
+            Console.WriteLine("Please enter password");
+            password = Console.ReadLine();
+        }
     }
 }
